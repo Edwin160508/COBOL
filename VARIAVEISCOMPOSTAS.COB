@@ -39,21 +39,21 @@
       *----------------------------------------------------------------*
        WORKING-STORAGE                       SECTION.
       *----------------------------------------------------------------*
-      *PIC / PICTURE ï¿½ UMA CLAUSULA QUE DEFINE O TIPO E O TAMANHO DO CAMPO
+      *PIC / PICTURE É UMA CLAUSULA QUE DEFINE O TIPO E O TAMANHO DO CAMPO
       *TIPOS: NUMERICOS, ALFABETICOS E ALPHANUMERICOS
       *NUMERICOS TEM NO MAXIMO 18 DIGITOS
 
-      *COMPOSIï¿½ï¿½O DA VARIAVEL
+      *COMPOSIÇÃO DA VARIAVEL
       *<nivel><nome-da-variavel><tipo(tamanho)>
       *Regras de variaveis no COBOL
-      *1-<nome-da-variavel> deve conter no mï¿½ximo 30 caracteres.
-      *2-<nome-da-variavel> nï¿½o pode ter espaï¿½o em branco.
-      *3-<nome-da-variavel> nï¿½o pode ter letras numeros e hifen ao mesmo tempo.
-      *4-<nome-da-variavel> nï¿½o pode ser palavra reservada do COBOL.
-      *5-<nome-da-variavel> sï¿½ pode conter letras e hifen.
-      *6-<nome-da-variavel> pode ter no mï¿½nimo 1 caracter.
+      *1-<nome-da-variavel> deve conter no máximo 30 caracteres.
+      *2-<nome-da-variavel> não pode ter espaço em branco.
+      *3-<nome-da-variavel> não pode ter letras numeros e hifen ao mesmo tempo.
+      *4-<nome-da-variavel> não pode ser palavra reservada do COBOL.
+      *5-<nome-da-variavel> só pode conter letras e hifen.
+      *6-<nome-da-variavel> pode ter no mínimo 1 caracter.
 
-      *Variaveis tambï¿½m ja podem ser inicializadas
+      *Variaveis também ja podem ser inicializadas
       *<nivel><nome-da-variavel><tipo(tamanho)><valor-inicial>
       *Variaveis composta
       *Registro Cliente Ou Item de Grupo CLIENTE
@@ -68,11 +68,30 @@
               03 DIA       PIC XX VALUE "16".
               03 MES       PIC XX VALUE "05".
               03 ANO       PIC X(04) VALUE "1988".
+      *Nivel 66 serve para juntar valor de variaveis
+              66 MES-ANO   RENAMES MES THRU ANO.
+
+      *Constantes valore que nao pode mudar, sempre sao nivel 78.
+      *Nivel 78 nao precisa da clausula PIC
+      *Constantes podem ficar na area A e B como mostrado abaixo
+      *78 FEMININO VALUE "F"
+      *    78 MASCULINO VALUE "M".
+
+      *Nivel 88 sao condicoes booleanas no mundo do COBOl
+      *Nivel 88 nao precisa da clausula PIC
+       01 GENERO   PIC X(01).
+           88 MASCULINO VALUE "M".
+           88 FEMININO VALUE "F".
+
 
       *================================================================*
        PROCEDURE                                     DIVISION.
       *================================================================*
-      *    Comandos de excuï¿½ï¿½o sï¿½ pode ser posto na coluna 12 atï¿½ 72
+      *    Comandos de excução só pode ser posto na coluna 12 até 72
 
            DISPLAY CLIENTE
+           DISPLAY MES-ANO
+      *Setando masculino pra true para imprimir o valor M no console.
+           SET MASCULINO TO TRUE
+           DISPLAY GENERO
            STOP RUN.
