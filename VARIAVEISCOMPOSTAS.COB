@@ -39,21 +39,21 @@
       *----------------------------------------------------------------*
        WORKING-STORAGE                       SECTION.
       *----------------------------------------------------------------*
-      *PIC / PICTURE É UMA CLAUSULA QUE DEFINE O TIPO E O TAMANHO DO CAMPO
+      *PIC / PICTURE ï¿½ UMA CLAUSULA QUE DEFINE O TIPO E O TAMANHO DO CAMPO
       *TIPOS: NUMERICOS, ALFABETICOS E ALPHANUMERICOS
       *NUMERICOS TEM NO MAXIMO 18 DIGITOS
 
-      *COMPOSIÇÃO DA VARIAVEL
+      *COMPOSIï¿½ï¿½O DA VARIAVEL
       *<nivel><nome-da-variavel><tipo(tamanho)>
       *Regras de variaveis no COBOL
-      *1-<nome-da-variavel> deve conter no máximo 30 caracteres.
-      *2-<nome-da-variavel> não pode ter espaço em branco.
-      *3-<nome-da-variavel> não pode ter letras numeros e hifen ao mesmo tempo.
-      *4-<nome-da-variavel> não pode ser palavra reservada do COBOL.
-      *5-<nome-da-variavel> só pode conter letras e hifen.
-      *6-<nome-da-variavel> pode ter no mínimo 1 caracter.
+      *1-<nome-da-variavel> deve conter no mï¿½ximo 30 caracteres.
+      *2-<nome-da-variavel> nï¿½o pode ter espaï¿½o em branco.
+      *3-<nome-da-variavel> nï¿½o pode ter letras numeros e hifen ao mesmo tempo.
+      *4-<nome-da-variavel> nï¿½o pode ser palavra reservada do COBOL.
+      *5-<nome-da-variavel> sï¿½ pode conter letras e hifen.
+      *6-<nome-da-variavel> pode ter no mï¿½nimo 1 caracter.
 
-      *Variaveis também ja podem ser inicializadas
+      *Variaveis tambï¿½m ja podem ser inicializadas
       *<nivel><nome-da-variavel><tipo(tamanho)><valor-inicial>
       *Variaveis composta
       *Registro Cliente Ou Item de Grupo CLIENTE
@@ -72,7 +72,7 @@
       *================================================================*
        PROCEDURE                                     DIVISION.
       *================================================================*
-      *    Comandos de excução só pode ser posto na coluna 12 até 72
+      *    Comandos de excuï¿½ï¿½o sï¿½ pode ser posto na coluna 12 atï¿½ 72
 
            DISPLAY CLIENTE
            STOP RUN.
