@@ -1,0 +1,73 @@
+      *================================================================*
+       IDENTIFICATION                                DIVISION.
+      *================================================================*
+       PROGRAM-ID. PROGRA001.
+       AUTHOR.     EDWIN PEREIRA OLIVEIRA LIMA.
+      *================================================================*
+      ***********************DOCUMENTACAO*******************************
+      ******************************************************************
+      *>                                              NOME DA EMPRESA <*
+      *> DATA.: 22/09/2020                                            <*
+      *> ANALISTA.: EDWIN PEREIRA OLIVEIRA LIMA                       <*
+      *> OBJETIVO.:                                                   <*
+      *>              ESSE PROGRAMA RECEBE VALOR E IMPRIME NO CONSOLE <*
+      *>                                                              <*
+      *>                                                              <*
+      *>                                                              <*
+      ******************************************************************
+      *********************FIN DOCUMENTACAO*****************************
+      *================================================================*
+       ENVIRONMENT                                   DIVISION.
+      *================================================================*
+      *----------------------------------------------------------------*
+       CONFIGURATION                         SECTION.
+      *----------------------------------------------------------------*
+
+       SPECIAL-NAMES.
+      *----------------------------------------------------------------*
+       INPUT-OUTPUT                          SECTION.
+      *----------------------------------------------------------------*
+       FILE-CONTROL.
+
+      *================================================================*
+       DATA                                          DIVISION.
+      *================================================================*
+
+      *----------------------------------------------------------------*
+       FILE                                  SECTION.
+      *----------------------------------------------------------------*
+      *----------------------------------------------------------------*
+       WORKING-STORAGE                       SECTION.
+      *----------------------------------------------------------------*
+
+       77 WRK-VALOR1        PIC 9(10) VALUE 51.
+       77 WRK-VALOR2        PIC X(10) VALUE '3'.
+       77 WRK-VALOR3        PIC X(10) VALUE '-'.
+
+
+
+      *
+      *================================================================*
+       PROCEDURE                                     DIVISION.
+      *================================================================*
+      * Teste de condicao de CLASSES (testando os TIPOS) das valriaveis 
+      * Condicao TRUE por pelo tipo ser PIC 9()
+           IF WRK-VALOR1 IS NUMERIC
+               DISPLAY WRK-VALOR1
+
+           END-IF.
+      * Condicao FALSE por estar sendo inicializado como '3' mesmo com APAS
+      * COBOL considera Numero.
+      * Para esta condicao ser verdadeira seria nescessario colocar letras
+      * 'a3' ou '3a'
+           IF WRK-VALOR2 IS ALPHABETIC
+               DISPLAY WRK-VALOR2
+           END-IF.
+
+      * Condicao TRUE pela condicao de nao ser letras, sao numeros e sinal
+           IF WRK-VALOR2 IS NOT ALPHABETIC
+               AND WRK-VALOR3 IS NOT ALPHABETIC
+               DISPLAY 'VALOR2 = 'WRK-VALOR2 ' VALOR3 = 'WRK-VALOR3
+           END-IF.
+
+           STOP RUN.
