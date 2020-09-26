@@ -57,12 +57,5 @@
            DISPLAY CONT
            END-PERFORM.
 
-      *     PERFORM  CONTAR UNTIL  CONT >= 10000.
-
-       CONTAR.
-           ADD 1                      TO CONT
-           DISPLAY CONT.
-
-
        FINALIZAR.
            STOP RUN.
